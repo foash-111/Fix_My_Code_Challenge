@@ -28,6 +28,7 @@ ARGV.each do |arg|
             end
         end
         i = 0
+        j += 1
     end
     result << i_arg if !is_inserted
 end
