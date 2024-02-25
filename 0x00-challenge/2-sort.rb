@@ -15,22 +15,17 @@ ARGV.each do |arg|
     # insert result at the right position
     is_inserted = false
     i = 0
-    j = 0
     l = result.size
-    while !is_inserted && j < l do
-        while !is_inserted && i < l do
-            if result[i] < i_arg
-                i += 1
-            else
-                result.insert(i - 1, i_arg)
-                is_inserted = true
-                break
-            end
+    while !is_inserted && i < l do
+        if result[i] < i_arg
+            i += 1
+        else
+            result.insert(i - 1, i_arg)
+            is_inserted = true
+            break
         end
-        i = 0
-        j += 1
     end
-    result << i_arg if !is_inserted
+    result << i_arg if is_inserted
 end
 
 puts result
